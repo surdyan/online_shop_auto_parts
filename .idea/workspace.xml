@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0528830-8203-4ece-bbca-7e8e284ed27c" name="Changes" comment="" />
+    <list default="true" id="f0528830-8203-4ece-bbca-7e8e284ed27c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -35,6 +40,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.Main (1).executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/vasylmaryna/Downloads/CarPartsShop&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -88,6 +94,8 @@
       <workItem from="1705273782128" duration="1980000" />
       <workItem from="1705275776114" duration="1955000" />
       <workItem from="1705278066541" duration="88000" />
+      <workItem from="1705291072849" duration="634000" />
+      <workItem from="1705291795480" duration="49000" />
     </task>
     <servers />
   </component>
