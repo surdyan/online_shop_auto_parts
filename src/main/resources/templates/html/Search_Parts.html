@@ -1,0 +1,172 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+
+    <link th:href="@{/css/menu_style.css}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+
+<style>
+    button {
+        background-color: green;
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    select {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    .form-control {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid black;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        background-color: orange;
+    }
+
+    th {
+        background-color: yellow;
+    }
+
+    .heading {
+        font-size: 25px;
+        margin-right: 25px;
+        color: white;
+    }
+
+</style>
+
+<body>
+<nav>
+    <div class="logo">
+        Online Parts Store
+    </div>
+    <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+        <li><a href="/User_Home">Home</a></li>
+        <li><a class="active" href="/User_Partss">Search Parts</a></li>
+        <li><a href="/User_Buy_Parts">Buy Parts</a></li>
+        <li><a href="/Order_Details">Order Details</a></li>
+        <li><a href="#"><span th:text="${User}"></span></a></li>
+        <li><a href="/">Logout</a></li>
+    </ul>
+</nav>
+
+<br>
+
+&nbsp;<h2><span style="background-color: yellow; color: black; background-size: cover;">Choose Parts Operation</span>
+</h2>
+
+&nbsp;
+<form action="/user_select_operation" method="post" id="form1">
+    <select id="Parts_operation" name="Parts_operation">
+        <option value="None">None</option>
+        <option value="Search">Search Parts</option>
+        <option value="Display">Display Parts</option>
+
+    </select> <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<div th:if="${selectSearch == 'Search'}">
+    <br>
+    <h1><span style="background-color: yellow; color: black; background-size: cover;">Search Parts By Title</span></h1>
+
+    <form class="form" action="/user_search_Parts" method="post" onsubmit="return validateForm2()" id="Form_Search">
+        <br><br>
+        <input type="text" class="form-control" name="Parts_title" placeholder="Parts title" value="BMW Engine"><br><br>
+
+        <button type="submit">Search</button>
+    </form>
+
+</div>
+
+<script>
+    function validateForm2() {
+        let b1 = document.forms["Form_Search"]["Parts_title"].value;
+        if (b1 == "") {
+            swal("Parts Tittle Must be filled out");
+            return false;
+        }
+    }
+</script>
+
+<div th:if="${selectDisplay == 'Display'}">
+    <table>
+        <tr>
+            <th>Parts Tittle</th>
+            <th>Manufactur</th>
+            <th>Manufacturing_country</th>
+            <th>Rating</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="PartsArray : ${PartsObject}">
+            <td th:text="${PartsArray.getParts_title()}"></td>
+            <td th:text="${PartsArray.getManufactur()}"></td>
+            <td th:text="${PartsArray.getManufacturing_country()}"></td>
+            <td th:text="${PartsArray.getRate()}"></td>
+            <td th:text="${PartsArray.getPrice()}"></td>
+
+        </tr>
+
+    </table>
+</div>
+
+<script>
+    function validateForm3() {
+        let b1 = document.forms["Form_Rate"]["Parts_title"].value;
+        if (b1 == "") {
+            swal("Parts Tittle Must be filled out");
+            return false;
+        }
+    }
+</script>
+
+<div th:if="${PrintSwal == 'Parts_Found'}">
+    <script>swal("Parts Found Sucessfully");</script>
+</div>
+
+<div th:if="${PrintSwal == 'Parts_Not_Found'}">
+    <script>swal("Sorry Parts Not Available");</script>
+</div>
+
+<div th:if="${PrintSwal == 'Parts_Details_Empty'}">
+    <script>swal("Sorry Parts Not Available");</script>
+</div>
+
+<div th:if="${PrintSwal == 'RParts_Found'}">
+    <script>swal("Parts Rate & Manufacturing_country Updated Sucessfully");</script>
+</div>
+
+<div th:if="${PrintSwal == 'RParts_Not_Found'}">
+    <script>swal("Sorry Parts Not Available");</script>
+</div>
+
+</body>
+
+</html>

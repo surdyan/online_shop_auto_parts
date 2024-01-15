@@ -1,0 +1,10 @@
+com/car/parts/shop/controller/UserController.class
+com/car/parts/shop/controller/AdminController.class
+com/car/parts/shop/repository/UserRepo.class
+com/car/parts/shop/configuration/UserRegistration.class
+com/car/parts/shop/controller/HomeController.class
+com/car/parts/shop/configuration/OrderRegistration.class
+com/car/parts/shop/repository/PartsRepo.class
+com/car/parts/shop/repository/OrderRepo.class
+com/car/parts/shop/Main.class
+com/car/parts/shop/configuration/PartsRegistration.class
